@@ -1,0 +1,168 @@
+	public:
+        static int gcd(int a, int b) {
+       if (b == 0)
+          return a;
+         return gcd(b, a % b);
+        }
+         static int lcm(int a, int b) {
+           return (a * b) / gcd(a, b);
+      }
+	   static int oddcount(int x){
+	
+	           int count=0;
+	           for(int i=0;i<=x;i++){
+	               
+	                if(i%2==1) count++;
+	           }
+	        return count;
+	    }
+	  static int evencount(int x){
+	        
+	         int count=0;
+	         for(int i=0;i<=x;i++){
+	             if(i%2==0)count++;
+	         }
+	         return count;
+	    }
+	  static void equalstringsum(string s){
+
+		    vector<unsigned int>vs;
+
+				unsigned int sum1=0;
+				unsigned int sum2=0;
+
+				 for(long unsigned int i=0;i<s.length();i++){
+					   
+					   int sum=s[i]-'0';
+					   vs.push_back(sum);  	         	   
+				 }
+				 int n=vs.size()/2;
+                 int count=0;
+				 for(int i=0;i<n;i++){
+
+					   sum1+=vs[i]; 
+					   count++;
+				 }
+				 for(int i=count;i<6;i++){
+					   sum2+=vs[i];
+				 }
+				 if(sum1==sum2){
+					 cout<<"YES\n";
+				 }else{
+					 cout<<"NO\n";
+				 }
+	  }
+	   static void Cointransform(long long x){ 
+			   long long ans=1;
+			   while(x>3){
+				     x/=4;
+					 ans*=2;
+				}
+			   cout<<ans<<endl;
+ 		 }
+
+	    static bool perpectsqure(int n){
+			  if(n<0) return false;
+			  if(n==0) return true;
+			  int root=sqrt(n);
+			  return root*root==n;
+
+		}
+
+	   static void HardCompre(long long a, long long  b, long long c, long long d){
+
+		             long double  ans1=b*log((long double)a);
+					 long double  ans2=d*log((long double)c);
+
+					if(ans1>ans2){
+						cout<<"YES";
+					}else{
+						cout<<"NO";
+					}
+		   }
+
+  static bool primeGenrator(int n){
+ 
+	   if(n<=1){
+		   return false;
+	   }
+	   for(int i=2;i*i<=n;i++){
+		     if(n%i==0) return false;
+	     }
+	   return true;
+	}
+
+     static void digitRevarr(long long n){
+
+			   if(n==0){
+				   cout<<0<<"\n";
+				   return;
+			   }
+		       while(n!=0){
+				   cout<<(n%10);
+				   n/=10;
+				   if(n>0)cout<< " ";
+			   }
+			   cout<<"\n";
+		 }
+
+	 static void SumofConsecutiveOddNumbers(int n,int m){
+
+		    cin>>n>>m;
+			  int start=min(m,n);
+			  int end=max(m,n);
+
+			  int sum=0;
+				   for(int i=start+1;i<end;i++){
+					  if(i%2==1){
+                          sum+=i;
+					  }
+		          }
+				 cout<<sum<<endl;
+   			 }
+
+	   static void solve2(){
+		     int n;
+			 cin>>n;
+
+			 for(int i=1;i<=n;i++){
+
+				 for(int j=1;j<=n-i;j++){
+					 cout<<" ";
+				 }
+				 for(int j=1;j<=2*i-1;j++){
+					  cout<< "*";
+				 }
+				 cout<< endl;
+			} 
+     }
+
+	    static int  fabNth(int N){ 
+
+	       vector<unsigned long long>vs(N+1);
+
+	       vs[1]=0;
+	        if (N>=2)vs[2]=1;
+		   for(int i=3;i<=N;i++){
+			    	vs[i]=vs[i-1]+vs[i-2];
+			}
+		  
+		    return vs[N]; 
+	   }
+
+      static int Binarysearch(vector<int>&vs,int x){ 
+
+            int low=0;
+            int high=vs.size()-1;
+	         while(low<=high){
+				  int mid=low+(high-low)/2;
+				  if(vs[mid]==x){
+					  return mid;
+				  }else if(vs[mid]<x){
+					   low=mid+1;
+				  }else{
+					    high=mid-1;
+				  }
+			 }	
+		    return -1;	 
+	   }

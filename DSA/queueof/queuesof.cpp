@@ -1,0 +1,106 @@
+#include<iostream>
+#include<queue>
+#include<bits/stdc++.h>
+using namespace std;
+class queuesof{
+
+     public:
+
+		static void printqueue(queue<int>q){
+
+			 cout<<"print:";
+			 while(!q.empty()){
+
+				   cout<<q.front()<<"|";
+				   q.pop();
+			 }
+
+			 cout<<"|";
+		}
+
+ static void reversequeue(queue<int>q){
+
+             stack<int>st;
+
+			 while(!q.empty()){
+
+				  int m=q.front();
+				  st.push(m);
+				  q.pop();
+			 }
+			 while(!st.empty()){
+
+				  int m=st.top();
+				  q.push(m);
+				  st.pop();
+			 }
+       
+		  printqueue(q);			 
+   }
+
+  static getLastelement(queue<int>q){
+
+	    queue<int>vs;
+
+  }
+
+  static void sumQueue(queue<int>q){
+
+	    queue<int>vs;
+
+		int sum=0;
+		while(!q.empty()){
+
+			sum+=q.front();
+			q.pop();
+		}
+		cout<<"sum all queue:"<<sum<<endl;
+      }
+
+  static void frontRreaequa(queue<int>q){
+
+	    int fronts=q.front();
+		bool isequals=true;
+
+		queue<int>qs;
+
+	    while(!q.empty()){
+
+			 if(fronts==q.front()){
+
+				  qs.push(q.front());
+			 }
+
+			 q.pop();
+		 }
+
+		if(isequals){
+			cout<<"Yes\n";
+		}else{
+			cout<<"No\n";
+		}
+  }
+
+
+
+	    static insertque(){
+
+			  queue<int>q;
+			  int size;
+
+			  cin>>size;
+			  for(int i=0;i<size;i++){
+				    int num;
+					cin>>num;
+					q.push(num);
+			  }
+
+               frontRreaequa(q);
+		}
+        	   
+};
+int main(){
+
+	queuesof::insertque();
+
+}
