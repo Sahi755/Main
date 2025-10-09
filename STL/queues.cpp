@@ -59,31 +59,34 @@ class queuesof{
 
   static void frontRreaequa(queue<int>q){
 
-	    int fronts=q.front();
-		bool isequals=true;
+	      if(q.front()==q.back()){
+			  cout<<"yes equals";
+		  }else{
+			  cout<<"No equals";
+		  }
+	  }
 
-		queue<int>qs;
+  static void maxinqueue(queue<int>q){
 
-	    while(!q.empty()){
 
-			 if(fronts==q.front()){
-
-				  qs.push(q.front());
-			 }
-
-			 q.pop();
-		 }
-
-		if(isequals){
-			cout<<"Yes\n";
-		}else{
-			cout<<"No\n";
-		}
   }
 
+  static void minqueue(queue<int>q){
 
 
-	    static insertque(){
+  }
+
+  static void evenoddqueue(queue<int>q){
+
+
+  }
+
+  static void sumlastfirtq(queue<int>q){
+
+
+  }
+
+   static insertque(){
 
 			  queue<int>q;
 			  int size;
@@ -94,10 +97,8 @@ class queuesof{
 					cin>>num;
 					q.push(num);
 			  }
-
                frontRreaequa(q);
-		}
-        	   
+		}        	   
 };
 int main(){
 
