@@ -2,7 +2,7 @@
 using namespace std;
 class stacks{
 
-	  
+	
 };
 int main(){
 
