@@ -1,0 +1,75 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve(vector<int> &A, vector<int> &B, int caseNum) {
+    int n = A.size();
+
+
+    for (int i = 0; i < n; i++) {
+        if (A[i] > B[i]) {
+            cout << "Case #" << caseNum << ": -1\n";
+            return;
+        }
+    }
+
+    // Step 2: Pair (B[i], i) and sort by B[i] descending
+    vector<pair<int, int>> order;
+    for (int i = 0; i < n; i++) order.push_back({B[i], i});
+    sort(order.rbegin(), order.rend());
+
+    // Step 3: Store indices grouped by target value
+    unordered_map<int, vector<int>> value_to_indices;
+    for (int i = 0; i < n; i++) {
+        value_to_indices[A[i]].push_back(i);
+    }
+
+    vector<pair<int, int>> ops;
+
+    // Step 4: Process from largest target down
+    for (auto [target, idx] : order) {
+        if (A[idx] == target) continue;
+
+        // Find a donor dish with temperature == target
+        if (value_to_indices[target].empty()) {
+            cout << "Case #" << caseNum << ": -1\n";
+            return;
+        }
+
+        int donor = value_to_indices[target].back();
+        value_to_indices[target].pop_back();
+
+        // Perform operation: heat A[idx] from donor
+        ops.push_back({donor + 1, idx + 1});
+        A[idx] = target;
+
+        // Update the bucket for new temperature
+        value_to_indices[A[idx]].push_back(idx);
+    }
+
+    // Step 5: Output result
+    cout << "Case #" << caseNum << ": " << ops.size() << "\n";
+    for (auto &p : ops)
+        cout << p.first << " " << p.second << "\n";
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+	
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+
+    int T;
+    cin >> T;
+    for (int t = 1; t <= T; t++) {
+        int N;
+        cin >> N;
+        vector<int> A(N), B(N);
+        for (int i = 0; i < N; i++) cin >> A[i];
+        for (int i = 0; i < N; i++) cin >> B[i];
+        solve(A, B, t);
+    }
+    return 0;
+}
+

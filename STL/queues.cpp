@@ -10,18 +10,15 @@ class queuesof{
 
 			 cout<<"print:";
 			 while(!q.empty()){
-
 				   cout<<q.front()<<"|";
 				   q.pop();
 			 }
-
 			 cout<<"|";
 		}
 
  static void reversequeue(queue<int>q){
 
              stack<int>st;
-
 			 while(!q.empty()){
 
 				  int m=q.front();

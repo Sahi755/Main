@@ -14,15 +14,11 @@ class Comparators{
 
 			   return a.second<b.second;
 		  }
-
 };
 class Algorithms{
 
-       
 };
-
 class NumberTeoryAlgo{
-
 	public:
         static int gcd(int a, int b) {
        if (b == 0)
@@ -37,21 +33,31 @@ class NumberTeoryAlgo{
 class Solution:public Comparators, Algorithms, NumberTeoryAlgo{
 
 public:
-  	 static void solve(int m){   
-      
-            cout<<m;
-    }
+  	 static void solve(vector<int>&start,vector<int>&end,int caseNum ){    
+   
+	
+}
 
-    
+     static void input(int T){
 
-     static void input(){
+         vector<int>start;
+		 vector<int>end;
+		 int n;
+		 int x;
 
-        int num1;
-
-        cin>>num1;
-
-        solve(num1);
-     }
+			 cin>>n;
+              for(int i=0;i<n;i++){
+                    cin>>x;
+					start.push_back(x); 
+			  }
+			    cout<<endl;
+	
+                for(int i=0;i<n;i++){
+                    cin>>x;
+					end.push_back(x); 
+			  }
+		      solve(start,end,T);
+	}
  };
 
 int main(){
@@ -59,8 +65,15 @@ int main(){
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    Solution::input();
+
+	    int T;
+		cin>>T;
+
+		for(int idx=1;idx<=T;idx++){
+
+				 Solution::input(idx);
+		}
+
+		
+		
 }

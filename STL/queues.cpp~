@@ -40,8 +40,7 @@ class queuesof{
 
   static getLastelement(queue<int>q){
 
-	    queue<int>vs;
-
+	    cout<<"get last element:"<<q.back();
   }
 
   static void sumQueue(queue<int>q){

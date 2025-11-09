@@ -49,10 +49,6 @@ class Arrays{
 
 	  }
 
-	  static reverseArr(long long arr[],int size){
-
-
-	  }
 	static void inputArr(){
 
 		long long  arr[10];
