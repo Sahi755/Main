@@ -43,48 +43,15 @@ public:
 
 class Solution : public Comparators, public Algorithms, public NumberTeoryAlgo {
 public:
-    static solve(vector<int>vs) {
+    static void  solve() {
 
-		   int count=0;
-		   for(int i=0;i<vs.size()-1;i++){
+		 cout<<"hello";
 
-			     if(vs[i]%2==1){
-
-					  swap(vs[i],vs[i+1]);
-					  count++;
-				 }else{
-
-					  count=0;
-				 }
-		   }
-
-		  cout<<count/2<<endl; 
 	}
-
-	static int maxof(vector<int>arr){
-
-		 int max_int=arr[0];
-
-	   for(int i=0;i<arr.size();i++){
-
-		    if(arr[i]>max_int){
-
-                 max_int=arr[i];
-			}
-	   }
-
-	   return max_int;
-	}
-
-	static void  missingNum(vector<int>& arr) {
-
-	      	
-
-   }
 
     static void inputarr() {
 
-		  int n;
+		   int n;
 		   vector<int>vs2;
 		   cin>>n;
 		   for(int i=0;i<n;i++){
@@ -93,9 +60,11 @@ public:
 			  vs2.push_back(m);
 		   }
 
-            missingNum(vs2);		   
+           	   
         }
    static void inputsingle(){
+
+              
     
 	 }
 };
@@ -104,5 +73,6 @@ int main() {
    //  freopen("output.txt", "w", stdout);
    
 		Solution::inputarr();
+	    Solution::inputsingle();
 
 }

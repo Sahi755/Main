@@ -46,30 +46,87 @@ class Arrays{
 		    int avg=sums(arr,size)/size;
 
 		    cout<<"average:"<<avg<<endl;
+	  }
+
+	  static void  reverseArr(long long arr[],int size){
+
+        int left=0;
+	    int right=size-1;
+
+	    while(left<right){
+
+			  int temp=arr[left];
+			  arr[left]=arr[right];
+			  arr[right]=temp;
+
+			  left++;
+			  right--;
+		}
+	     for(int i=0;i<size;i++){
+			  cout<<arr[i]<<" ";
+		 }	
+
 
 	  }
 
+	  static void  isSorted(long long  arr[],int size){
+
+		    bool issorted=true;
+
+			 for(int i=0;i<size;i++){
+
+					  if(arr[i]>arr[i+1]){
+
+						   issorted=false;
+					  }
+			     }
+
+			if(issorted){
+				 cout<<"sorted!";
+			}else{
+				cout<<"not sorted!";
+			}
+
+	  }
+
+	  static void countEven(int arr[],int size){
+
+		  int count=0;
+
+		  for(int i=0;i<size;i++){
+
+			   if(arr[i]%2==0){
+				   count++;
+			   }
+		  }
+
+         cout<<"count Even:"<<count<<endl;		 
+
+	  } 
 	static void inputArr(){
 
 		long long  arr[10];
 		int size;
 		int T;
-
 		cin>>T;
 		while(T--){
-
 			cin>>size;
 			for(long long  i=0;i<size;i++){
 				cin>>arr[i];
+			}
 
-			} 
-		      aveg(arr,size);
+		   	  countEven(arr,size);
 		}
 	}
+
+	   static void inputsingle(){
+  
+	       }
+
 };
 int main(){
+ 
+      Arrays::inputArr();	
+//	Arrays::inputsingle();
 
-    cout<<"i am coder!";
-   
-    Arrays::inputArr();	
 }

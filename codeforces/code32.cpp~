@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int main(){
+
+ cout<<"hejkj";
+ ✔ mutex
+✔ lock_guard & unique_lock
+✔ condition_variable
+✔ atomic
+✔ thread pool
+✔ deadlock
+✔ semaphores 
+}
