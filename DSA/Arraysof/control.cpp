@@ -169,6 +169,11 @@ class Control{
 		}
 		return 	currentLcm;
 	}
+
+	static fab(int n){
+
+		 
+	}
 };
 int main(){
 
